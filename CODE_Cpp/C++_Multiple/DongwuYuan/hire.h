@@ -1,3 +1,13 @@
+/*** 
+ * @Author: hayee
+ * @Date: 2022-04-19 18:27:04
+ * @LastEditTime: 2022-06-07 14:55:01
+ * @LastEditors: hayee
+ * @Github: hayeejie
+ * @FilePath: \C++_Multiple\DongwuYuan\hire.h
+ * @ProgramDescription: 
+ * @千山我独行,不必相送
+ */
 #pragma once
 #include<iostream>
 using namespace std;
@@ -9,13 +19,12 @@ public:
 	hire(double agility, double strength, double speed);
 	void menu();
 	void choose1(hire& h);
-	void choose2();
 	double fox();
 	double bunny();
 	double sloth();
 	void operator +(hire& h1);
 	double hirescore();
-	void display1();
+	void display();
 private:
 	double agility = 0; 
 	double strength = 0; 

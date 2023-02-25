@@ -1,50 +1,27 @@
 /*** 
  * @Author: hayee
- * @Date: 2013-01-01 07:34:27
- * @LastEditTime: 2022-04-13 23:03:15
+ * @Date: 2022-06-07 14:37:12
+ * @LastEditTime: 2022-06-07 15:53:58
  * @LastEditors: hayee
  * @Github: hayeejie
- * @FilePath: \github\程序\动物园\动物园.cpp
+ * @FilePath: \C++_Multiple\MyDongwuyuan\hire.cpp
  * @ProgramDescription: 
- * @千山我独行,不必相送
+ * @
  */
-#include<iostream>
-#include<string>
-#include<cmath>
-using namespace std;
-class hire
-{
-private:
-	double agi, str, sp;
-	char character;
-public:
-	void menu();
-	double Fox();
-	double Bunny();
-	double Sloth();
-	double hirescore();
-	void showmenu();
-	void WhetherToMeetTheResultsRequirements();
-	void minimenu();
-	hire(char c) : character(c){};
-	hire operator+(hire &c1);
-	void WhetherToPartner(hire &c1);
-};
-hire hire::operator+(hire &c1) {
-	if (character == 'l' && c1.character == 'l')
-	{
-		cout << "很遗憾，你们不适合组队" << endl;
-	}else if (character == 'm' && c1.character == 'm')
-	{
-		cout << "不错，你们可以组队" << endl;
-	}else
-	{
-		cout << "恭喜，你们是完美搭档！" << endl;
-	}
-	return 0;
+#include"hire.h"
+#include"elite.h"
+hire::hire(int n){
+	if (n>=0&&n<=50)
+		character = 'L';
+	else if(n>50&&n<=80)
+		character = 'M';
+	else if(n>80&&n<=100)
+		character = 'H';
+	else
+	cout << "n必须是不大于100的非负整数" << endl;
 }
 void hire::menu(){
-	cout << "Select a numerical option:" << endl;
+	cout << "Select a numerical option" << endl;
 	cout << "=== menu ===" << endl;
 	cout << "1.Fox" << endl;
 	cout << "2.Bunny" << endl;
@@ -93,26 +70,31 @@ void hire::WhetherToMeetTheResultsRequirements() {
 		minimenu();
 	}
 }
-void hire::WhetherToPartner(hire &c1){
-	(*this) + c1;
-}
 void hire::minimenu() {
 	int flag = 1;
-	hire fox('l'), bunny('h'), sloth('m');
 	while (flag == 1) {
 		menu();
 		int j;
+		hire fox;
+		hire bunny;
+		hire sloth;
+		cout << "请输入搭档的编号:" << endl;
 		cin >> j;
+    	cout << "请输入你的性格(L/M/H):" << endl;
+    	cin >> character;
 		switch (j)
 		{
 			case 1:
 				WhetherToPartner(fox);
+                flag = 0;
 				break;
 			case 2:
 				WhetherToPartner(bunny);
+                flag = 0;
 				break;
 			case 3:
 				WhetherToPartner(sloth);
+                flag = 0;
 				break;
 			case 4:
 				cout << "good bye!!" << endl;
@@ -124,39 +106,36 @@ void hire::minimenu() {
 		}
 	}
 }
-void hire::showmenu() {
-	int flag = 1;
-	while (flag == 1)
-	{
-		menu();
-		int i;
-		cin >> i;
-		switch(i){
-			case 1:
-				Fox();
-				WhetherToMeetTheResultsRequirements();
-				break;
-			case 2:
-				Bunny();
-				WhetherToMeetTheResultsRequirements();
-				break;
-			case 3:
-				Sloth();
-				WhetherToMeetTheResultsRequirements();
-				break;
-			case 4:
-				cout << "Good bye!" << endl;
-				flag = 0;
-				break;
-			default:
-				cout << "Indvalid option" << endl;
-				break;
-		}
-	}	
+void hire::WhetherToPartner(hire &c1){
+	cout << "请输入搭档的性格(L/M/H):" << endl;
+	cin >> c1.character;
+	(*this) + c1;
 }
-int main()
-{
-	hire a('l');
-	a.showmenu();
-	return 0;
+void hire::operator + (hire &c1) {
+	if (character == 'L' && c1.character == 'L')
+	{
+		cout << "很遗憾，你们不适合组队" << endl;
+	}else if (character == 'M' && c1.character == 'M')
+	{
+		cout << "不错，你们可以组队" << endl;
+	}else
+	{
+		cout << "恭喜，你们是完美搭档！" << endl;
+	}
+}
+void hire::operator + (int n){
+	hire a(n);
+	if (character == 'L' && a.character == 'L')
+	{
+		cout << "很遗憾，你们不适合组队" << endl;
+	}else if (character == 'M' && a.character == 'M')
+	{
+		cout << "不错，你们可以组队" << endl;
+	}else
+	{
+		cout << "恭喜，你们是完美搭档！" << endl;
+	}
+}
+void hire::display(){
+	cout << "agility is" << agi << "," << "strength is " << str << "," << "speed is" << sp << endl;
 }

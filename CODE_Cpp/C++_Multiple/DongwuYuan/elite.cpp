@@ -14,36 +14,66 @@ void elite::showmenu() {
 		char x;
 		cin >> x;
 		switch (x) {
-		case '1':
+		case '1':{
 			fox();
-			display();
-			choose2();
+			hire::display();
+			double ret = hirescore();
+			if (ret > 31.3) {
+				cout << "恭喜，你被录用了！" << endl;
+				cout << "请选择搭档:" << endl;
+			}else
+			{
+				return;
+			}
 			minimenu();
 			judge();
+			display();
 			flag = 0;
 			break;
-		case'2':
+		}
+		case'2':{
 			bunny();
-			display();
-			choose2();
+			hire::display();
+			double ret = hirescore();
+			if (ret > 31.3) {
+				cout << "恭喜，你被录用了！" << endl;
+				cout << "请选择搭档:" << endl;
+			}else
+			{
+				return;
+			}
 			minimenu();
 			judge();
+			display();
 			flag = 0;
 			break;
+		}
 		case'3':
+			{
 			sloth();
-			display();
-			choose2();
+			hire::display();
+			double ret = hirescore();
+			if (ret > 31.3) {
+				cout << "恭喜，你被录用了！" << endl;
+				cout << "请选择搭档:" << endl;
+			}else
+			{
+				return;
+			}
 			minimenu();
 			judge();
+			display();
 			flag = 0;
 			break;
-		case'4':
+			}
+		case'4':{
 			cout << "good bye!!" << endl;
 			break;
-		default:
-			std::cout << "�˳�" << endl;
+		}
+		default:{
+			std::cout << "退出" << endl;
 			break;
+		}
 		}
 	}
 
@@ -75,16 +105,16 @@ void elite::minimenu() {
 			cout << "good bye!!" << endl;
 			break;
 		default:
-			std::cout << "�˳�" << endl;
+			std::cout << "退出" << endl;
 			break;
 		}
 	}
 }
 void elite::judge() {
 	while (true) {
-		cout << "������insight��" << endl;
+		cout << "请输入insight" << endl;
 		cin >> insight;
-		cout << "������logic��" << endl;
+		cout << "请输入logic" << endl;
 		cin >> logic;
 		if ((insight < 0 || insight > 100) && (logic < 0 || logic > 100)) {
 			cout << "Invalid values" << endl;

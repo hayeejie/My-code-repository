@@ -1,20 +1,30 @@
+/*** 
+ * @Author: hayee
+ * @Date: 2022-04-19 18:37:10
+ * @LastEditTime: 2022-06-07 14:49:05
+ * @LastEditors: hayee
+ * @Github: hayeejie
+ * @FilePath: \C++_Multiple\DongwuYuan\hire.cpp
+ * @ProgramDescription: 
+ * @åƒå±±æˆ‘ç‹¬è¡Œ,ä¸å¿…ç›¸é€
+ */
 #include"hire.h"
 #include"elite.h"
 hire::hire(char c) {
 	this->character = c;
 }
 hire::hire(double agility, double strength, double speed) {
-	this->agility;
-	this->speed;
-	this->strength;
+	this->agility = agility;
+	this->speed= speed;
+	this->strength = strength;
 }
 void hire::operator +(hire& h1) {
 	if ((character == 'l' && h1.character == 'l'))
-		cout << "ºÜÒÅº¶£¬ÄãÃÇ²»ÄÜ×é¶Ó" << endl;
+		cout << "å¾ˆé—æ†¾ï¼Œä½ ä»¬ä¸é€‚åˆç»„é˜Ÿ" << endl;
 	else if ((character == 'm' && h1.character == 'm'))
-		cout << "²»´í£¬ÄãÃÇ¿ÉÒÔ×é¶Ó" << endl;
+		cout << "ä¸é”™ï¼Œä½ ä»¬å¯ä»¥ç»„é˜Ÿ" << endl;
 	else
-		cout << "¹§Ï²£¬ÄãÃÇÊÇÍêÃÀ´îµµ" << endl;
+		cout << "æ­å–œï¼Œä½ ä»¬æ˜¯å®Œç¾æ­æ¡£ï¼" << endl;
 }
 void hire::menu() {
 	agility = strength = speed = 0;
@@ -51,20 +61,12 @@ double hire::sloth() {
 	cout << "Hire score:" << hirescore() << endl;
 	return hirescore();
 }
-void hire::choose2() {
-	double ret = hirescore();
-	if (ret > 31.3) {
-		cout << "¹§Ï²£¬Äã±»Â¼ÓÃÁË" << endl;
-		cout << "ÇëÑ¡Ôñ´îµµ" << endl;
-	}
-
-}
 void hire::choose1(hire& h) {
 	(*this) + h;
 }
 double hire::hirescore() {
 	return 1.0 * agility + 2.16 * strength + 3.24 * speed;
 }
-void hire::display1() {
+void hire::display() {
 	cout << "agility is" << agility << "," << "strength is " << strength << "," << "speed is" << speed << endl;
 }
