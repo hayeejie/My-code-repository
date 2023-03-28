@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.UserMapper">
+<mapper namespace="com.example.bootmpdemo.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.User">
+    <resultMap id="BaseResultMap" type="com.example.bootmpdemo.domain.User">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
@@ -13,4 +13,8 @@
     <sql id="Base_Column_List">
         id,name,password
     </sql>
+    <select id="findUserByName" resultType="com.example.bootmpdemo.domain.User">
+        select * from user where name=#{name}
+    </select>
+
 </mapper>

@@ -1,6 +1,8 @@
-package com.sample;
+package com.example.mybatis.pojo;
 
+import lombok.Data;
 
+@Data
 public class User {
 
   private long id;
@@ -9,39 +11,48 @@ public class User {
   private java.sql.Date birthday;
 
 
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public String getAge() {
-    return age;
-  }
-
-  public void setAge(String age) {
-    this.age = age;
-  }
-
-
-  public java.sql.Date getBirthday() {
-    return birthday;
-  }
-
-  public void setBirthday(java.sql.Date birthday) {
-    this.birthday = birthday;
-  }
-
+//  public long getId() {
+//    return id;
+//  }
+//
+//  public void setId(long id) {
+//    this.id = id;
+//  }
+//
+//
+//  public String getName() {
+//    return name;
+//  }
+//
+//  public void setName(String name) {
+//    this.name = name;
+//  }
+//
+//
+//  public String getAge() {
+//    return age;
+//  }
+//
+//  public void setAge(String age) {
+//    this.age = age;
+//  }
+//
+//
+//  public java.sql.Date getBirthday() {
+//    return birthday;
+//  }
+//
+//  public void setBirthday(java.sql.Date birthday) {
+//    this.birthday = birthday;
+//  }
+//
+//  @Override
+//  public String toString() {
+//    return "User{" +
+//            "id=" + id +
+//            ", name='" + name + '\'' +
+//            ", age='" + age + '\'' +
+//            ", birthday=" + birthday +
+//            '}';
+//  }
 }
