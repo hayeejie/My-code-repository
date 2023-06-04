@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * //（1）用户名相同，密码不相同也可以正常注册
- * //（2）用户名不同，密码相同或者不相同也可以正常注册
+ * （1）用户名相同，密码不相同也可以正常注册
+ * （2）用户名不同，密码相同或者不相同也可以正常注册
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
@@ -23,9 +23,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     @Override
     public String addUser(User user) {
-        /**
-         * //（1）用户名相同，密码不相同也可以正常注册
-         */
+
+        //（1）用户名相同，密码不相同也可以正常注册
 
         //1.创建一个条件构造器，类型User，即你要查询的实体数据
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
@@ -43,9 +42,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             }
         }
 
-        /**
-         * //（2）用户名不同，密码相同或者不相同也可以正常注册
-         */
+        //（2）用户名不同，密码相同或者不相同也可以正常注册
+
 
         //1.根据用户名去数据库查询是否存在该用户
         User userByName = userMapper.findUserByName(user.getName());

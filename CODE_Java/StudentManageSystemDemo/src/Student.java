@@ -7,13 +7,13 @@
 public class Student {
     private String id;
     private String name;
-    private int age;
+    private String age;
     private String homeaddress;
 
     public Student() {
     }
 
-    public Student(String id, String name, int age, String homeaddress) {
+    public Student(String id, String name, String age, String homeaddress) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -36,11 +36,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
