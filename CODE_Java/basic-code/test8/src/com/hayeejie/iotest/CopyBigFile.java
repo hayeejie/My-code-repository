@@ -19,7 +19,7 @@ public class CopyBigFile {
         FileOutputStream fos = new FileOutputStream("E:\\2023-05-01 21-45-36copy.mkv");
         byte[] bytes = new byte[1024 * 1024 * 10];
         int len;
-        while ((len = fis.readNBytes(bytes, 0, bytes.length)) != 0) {
+        while ((len = fis.read(bytes)) != -1) {
             fos.write(bytes, 0, len);
         }
         fos.close();
